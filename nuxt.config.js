@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import zhHans from 'vuetify/es5/locale/zh-Hans'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -6,17 +7,25 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - blog',
+    titleTemplate: '%s｜予乾的万事屋',
     title: 'blog',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'zh-cmn-Hans',
     },
     meta: [
       { charset: 'utf-8' },
+      { name: 'renderer', content: 'webkit' },
+      { httpEquiv: 'X-UA-Compatible', content: 'E=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: 'https://static.ek-studio.cn/favicon.ico',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -56,7 +65,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -68,6 +77,10 @@ export default {
           success: colors.green.accent3,
         },
       },
+    },
+    lang: {
+      locales: { zhHans },
+      current: 'zhHans',
     },
   },
 
