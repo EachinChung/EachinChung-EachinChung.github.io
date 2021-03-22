@@ -92,11 +92,15 @@
 
         <v-divider></v-divider>
 
-        <v-card-text class="white--text">
-          ©️ {{ new Date().getFullYear() }} Eachin-life.com
-          <!-- <a class="filing" target="_blank" href="http://www.beian.miit.gov.cn">
+        <v-card-text>
+          <a
+            class="text-decoration-none"
+            style="color: white"
+            target="_blank"
+            href="https://beian.miit.gov.cn/"
+          >
             粤ICP备18063371号
-          </a> -->
+          </a>
         </v-card-text>
       </v-card>
     </v-footer>
