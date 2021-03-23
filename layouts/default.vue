@@ -1,22 +1,31 @@
 <template>
   <v-app dark>
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" fixed app>
-      <v-list>
-        <v-list-item class="px-4">
-          <v-list-item-avatar>
-            <v-img
-              src="https://static.ek-studio.cn/image/2f3f498bb74c7f1974c7afa051391578.jpg"
-            />
-          </v-list-item-avatar>
-        </v-list-item>
+      <v-card flat tile dark>
+        <v-img
+          height="160px"
+          src="//cdn.global.eachin-life.com/image/64c3f2c31d21329012d1e46e8e43d751.jpeg"
+        >
+          <v-list class="pt-6">
+            <v-list-item>
+              <v-list-item-avatar>
+                <v-img
+                  src="//cdn.global.eachin-life.com/image/2f3f498bb74c7f1974c7afa051391578.jpg"
+                ></v-img>
+              </v-list-item-avatar>
+            </v-list-item>
 
-        <v-list-item link>
-          <v-list-item-content>
-            <v-list-item-title class="title">Eachin Chung</v-list-item-title>
-            <v-list-item-subtitle>EachinChung@gmail.com</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title class="title"> Eachin </v-list-item-title>
+                <v-list-item-subtitle>
+                  me@eachin-life.com
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-img>
+      </v-card>
 
       <v-divider></v-divider>
 
@@ -39,8 +48,8 @@
     </v-navigation-drawer>
 
     <v-app-bar
-      src="/a32dbb58b38ea375ac17f35750afcb62.jpeg"
-      class="indigo"
+      src="//cdn.global.eachin-life.com/image/a32dbb58b38ea375ac17f35750afcb62.jpeg"
+      :class="{ indigo: !dark }"
       height="300px"
       shrink-on-scroll
       fade-img-on-scroll
@@ -111,6 +120,7 @@
 export default {
   data() {
     return {
+      dark: false,
       drawer: false,
       items: [
         {
@@ -144,17 +154,9 @@ export default {
     }
   },
   mounted() {
-    this.$vuetify.theme.dark = false
+    this.$vuetify.theme.dark = this.dark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
   },
 }
 </script>
-
-<style>
-.filing {
-  display: inline-block;
-  text-decoration: none;
-  color: #dad7da;
-  height: 20px;
-  line-height: 20px;
-}
-</style>

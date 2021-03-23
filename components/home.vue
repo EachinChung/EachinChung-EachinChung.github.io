@@ -4,10 +4,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-      title: '首页',
-    }
-  },
+  name: 'Home',
 }
 </script>

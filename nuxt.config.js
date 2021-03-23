@@ -7,8 +7,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s｜予乾的万事屋',
-    title: 'blog',
+    titleTemplate: '%s｜Eachin的万事屋',
+    title: '部落格',
     htmlAttrs: {
       lang: 'zh-cmn-Hans',
     },
@@ -23,7 +23,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: 'https://static.ek-studio.cn/favicon.ico',
+        href: 'https://cdn.global.eachin-life.com/favicon.ico',
       },
     ],
   },
@@ -64,6 +64,10 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    lang: {
+      locales: { zhHans },
+      current: 'zhHans',
+    },
     theme: {
       dark: false,
       themes: {
@@ -77,10 +81,6 @@ export default {
           success: colors.green.accent3,
         },
       },
-    },
-    lang: {
-      locales: { zhHans },
-      current: 'zhHans',
     },
   },
 

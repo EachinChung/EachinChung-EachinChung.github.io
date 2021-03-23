@@ -4,9 +4,10 @@
 
 <script>
 export default {
+  layout: 'calculator',
   head() {
     return {
-      title: '首页',
+      title: '算法',
     }
   },
 }
