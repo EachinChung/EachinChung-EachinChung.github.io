@@ -23,7 +23,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: 'https://cdn.global.eachin-life.com/favicon.ico',
+        href: '//cdn.global.eachin-life.com/favicon.ico',
       },
     ],
   },

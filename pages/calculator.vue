@@ -1,10 +1,13 @@
 <template>
-  <div></div>
+  <div><layout /></div>
 </template>
 
 <script>
+import layout from '@/components/layout'
 export default {
-  layout: 'calculator',
+  components: {
+    layout,
+  },
   head() {
     return {
       title: '算法',

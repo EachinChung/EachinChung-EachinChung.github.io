@@ -11,7 +11,7 @@ export default {
   // layout: 'home',
   head() {
     return {
-      title: '首页',
+      title: '生活',
     }
   },
 }
