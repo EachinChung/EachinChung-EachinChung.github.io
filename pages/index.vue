@@ -1,14 +1,39 @@
 <template>
-  <div><layout /></div>
+  <div>
+    <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" />
+    asd<br />
+    asd<br />
+    asd<br />
+    asd<br />
+    asd<br />
+    asd<br />
+    asd<br />
+
+    asd<br />
+    asd<br />
+
+    asd<br />
+    asd<br />
+    asd<br />
+
+    asd<br />
+    asd<br />
+
+    asd<br />
+    asd<br />
+
+    asd<br />
+    asd<br />
+
+    asd<br />
+    asd<br />
+
+    asd<br />
+  </div>
 </template>
 
 <script>
-import layout from '@/components/layout'
 export default {
-  components: {
-    layout,
-  },
-  // layout: 'home',
   head() {
     return {
       title: '首页',

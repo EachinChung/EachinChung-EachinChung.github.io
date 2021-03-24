@@ -1,14 +1,9 @@
 <template>
-  <div><layout /></div>
+  <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" />
 </template>
 
 <script>
-import layout from '@/components/layout'
 export default {
-  components: {
-    layout,
-  },
-  // layout: 'home',
   head() {
     return {
       title: 'go',
