@@ -1,12 +1,10 @@
 export default function ({ store, route }) {
   switch (route.path) {
     case '/':
+    case '/about':
       store.commit('setAppBar', {
-        // appBarSrc:
-        //   '//cdn.global.eachin-life.com/image/5b033239c184252cb6e86d1260274488.jpeg',
-        // appBarSrc: 'https://picsum.photos/1920/1080?random',
         appBarSrc:
-          'https://i.picsum.photos/id/388/1920/1080.jpg?hmac=5kDwk7WAMMXXmPiMTQaOCCgkykXc6Gt-fHA-evtSX14',
+          '//cdn.global.eachin-life.com/image/b22f7191ce5b118f004a68ddbca84c5d.jpeg',
         appBarShrinkOnScroll: true,
         appBarFadeImgOnScroll: true,
         appBarProminent: true,

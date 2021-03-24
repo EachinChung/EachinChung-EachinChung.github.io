@@ -52,7 +52,7 @@
       :shrink-on-scroll="$store.state.appBarShrinkOnScroll"
       :fade-img-on-scroll="$store.state.appBarFadeImgOnScroll"
       :prominent="$store.state.appBarProminent"
-      :color="dark ? undefined : '#6D4C41'"
+      color="#212121"
       fixed
       dark
       app
@@ -61,25 +61,39 @@
       <v-toolbar-title> Eachin的万事屋 </v-toolbar-title>
 
       <v-spacer />
-      <v-btn icon>
+
+      <!-- 搜索功能、接入后端再考虑 -->
+      <!-- <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      </v-btn> -->
+
+      <v-menu offset-y>
+        <template #activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+        <v-list dense>
+          <v-list-item @click="dark = !dark">
+            <v-list-item-content>
+              <v-list-item-title>{{
+                dark ? '浅色模式' : '深色模式'
+              }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <template v-if="$store.state.appBarExtension" #extension>
-        <v-tabs align-with-title>
-          <v-tab>文章</v-tab>
-          <v-tab>关于</v-tab>
+        <v-tabs align-with-title color="white">
+          <v-tab to="/" nuxt>文章</v-tab>
+          <v-tab to="/about" nuxt>关于</v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
 
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-main>
 
     <v-dialog v-model="dialog" persistent max-width="420">
@@ -146,8 +160,8 @@ export default {
         },
         {
           icon: 'mdi-language-go',
-          title: 'Go',
-          to: '/go',
+          title: 'Golang',
+          to: '/golang',
         },
         {
           icon: 'mdi-language-python',
@@ -168,6 +182,11 @@ export default {
       miniVariant: false,
       icons: ['mdi-wechat', 'mdi-linkedin', 'mdi-instagram', 'mdi-github'],
     }
+  },
+  watch: {
+    dark() {
+      this.$vuetify.theme.dark = this.dark
+    },
   },
   mounted() {
     this.$vuetify.theme.dark = this.dark = window.matchMedia(
