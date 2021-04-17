@@ -99,7 +99,10 @@
     <v-dialog v-model="dialog" persistent max-width="420">
       <v-card>
         <v-card-title class="headline"> 该网站正在处于施工状态 </v-card-title>
-        <v-card-text> The site is under construction. </v-card-text>
+        <v-card-text>
+          The site is under construction. <br />
+          可以先关注公众号：编程小日常
+        </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" text @click="dialog = false"> 知道了 </v-btn>
